@@ -1,207 +1,157 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Twilight Veil Media</title><meta name="description" content="Twilight Veil Media — home of The Twilight Order, an original dark fantasy franchise.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap">
+<title>Twilight Order</title><meta name="description" content="Official site of the Twilight Order, a dark-fantasy manga and light-novel franchise from Twilight Veil Media.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap">
 <link rel="stylesheet" href="codex.css">
-<style>
-/* Layout: full-bleed eclipse hero, then a measured editorial column with portrait and plate galleries breaking out to full width. */
-:root{--display:"Cormorant Garamond","Iowan Old Style",Palatino,Georgia,serif;--mark:Cinzel,"Cormorant Garamond",Georgia,serif;color-scheme:dark}
-.tvm-bar{position:sticky;top:env(safe-area-inset-top,0px)}
-.hero-x{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero-x .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;z-index:-2;opacity:.9}
-.hero-x::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,7,19,.35) 0%,rgba(11,7,19,.55) 45%,rgba(11,7,19,.97) 100%)}
-.hero-in{max-width:1080px;margin:0 auto;padding:clamp(70px,10vw,120px) 18px 44px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:28px 48px;align-items:center}
-.hero-mark{grid-column:1;width:clamp(180px,26vw,330px);height:auto;max-width:100%;justify-self:center;filter:drop-shadow(0 0 28px rgba(154,123,255,.45)) drop-shadow(0 12px 24px rgba(0,0,0,.6))}
-.hero-copy{grid-column:2;min-width:0}
-@media(max-width:760px){.hero-in{grid-template-columns:1fr;padding-top:40px}.hero-mark{grid-column:1;grid-row:1;width:min(60vw,240px)}.hero-copy{grid-column:1}}
-@media(prefers-reduced-motion:no-preference){.hero-mark{animation:markIn 1.2s ease-out both}@keyframes markIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}}
-.hero-in .crest{font-family:var(--mark);letter-spacing:.42em}
-@media(max-width:560px){.hero-in .crest{letter-spacing:.22em;font-size:11px}}
-.hero-in h1{font-family:var(--display);font-weight:500;font-size:clamp(46px,9vw,96px);margin:.12em 0 .1em;line-height:.98;letter-spacing:.005em;text-wrap:balance;
-  background:linear-gradient(180deg,#fff 0%,#e9dcff 50%,#c9a85f 115%);-webkit-background-clip:text;background-clip:text;color:transparent}
-.hero-in .tag{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(20px,3.2vw,30px);color:var(--lavender);margin:0 0 .5em;max-width:28ch;text-wrap:balance}
-.hero-in .sub{margin:0;max-width:62ch;font-style:normal;color:var(--ash)}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
-.btn{display:inline-block;text-decoration:none;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:12px 22px;border-radius:999px;border:1px solid var(--gold-dim);color:var(--gold);transition:.18s}
-.btn.solid{background:var(--gold);color:#1a1206;border-color:var(--gold)}
-.btn:hover{background:var(--gold);color:#1a1206}
-.btn.solid:hover{background:#f3cd84}
+<style>.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* Layout: the mock — library hero with the art as a window on the right, then a featured book band, three archive doors, the Join strip. */
+.hero{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid var(--line);background:#0a0807;margin:0}
+.landing section{margin:24px 0 0}
+.landing section.feat{margin-top:-40px}
+.landing section.cast{margin-top:44px}
+.hero .art{position:absolute;inset:0;z-index:-2}
+.hero .art img{width:100%;height:100%;object-fit:cover;object-position:60% 55%;display:block}
+.hero .art picture{display:block;height:100%}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(10,8,7,.97) 0%,rgba(10,8,7,.92) 34%,rgba(10,8,7,.35) 60%,rgba(10,8,7,.15) 100%),linear-gradient(180deg,rgba(10,8,7,.1) 0%,rgba(10,8,7,0) 40%,rgba(10,8,7,.9) 100%)}
+.hero-in{max-width:1180px;margin:0 auto;padding:clamp(56px,8vw,96px) 22px clamp(40px,6vw,70px);display:grid;grid-template-columns:minmax(0,46%) 1fr;gap:24px}
+.hero-copy{min-width:0}
+.eyeb{font-family:var(--mark);font-size:10.5px;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-dim);display:flex;align-items:center;gap:14px}
+.eyeb::after{content:"";flex:0 0 70px;height:1px;background:var(--gold-dim);opacity:.6}
+.hero h1{font-family:var(--display);font-weight:500;font-size:clamp(44px,6.4vw,84px);line-height:.98;margin:.25em 0 .3em;letter-spacing:-.005em;text-wrap:balance}
+.hero p{color:var(--ash);font-size:clamp(15px,1.5vw,18px);line-height:1.6;max-width:44ch;margin:0 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mark);font-size:12px;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:14px 24px;transition:.18s;border:1px solid var(--line2);color:var(--ink)}
+.btn.red{background:linear-gradient(180deg,#9a2430,#6e151f);border-color:#c0444f;color:#fbe9d2;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.btn.red:hover{background:linear-gradient(180deg,#b02c3a,#7e1a25);color:#fff}
+.btn:not(.red):hover{border-color:var(--gold);color:var(--gold)}
 .btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--panel);margin:-20px auto 0;max-width:1080px;position:relative;z-index:2}
-.stat{padding:16px 18px;border-right:1px solid var(--line);min-width:0}
-.stat:last-child{border-right:0}
-.stat b{display:block;font-family:var(--display);font-weight:500;font-size:30px;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
-.stat span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-@media(max-width:560px){.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}}
-.wrap h2{font-family:var(--display);font-weight:500;font-size:clamp(28px,4.8vw,40px);text-wrap:balance}
-.wrap section>.eyebrow::before{content:"■";color:var(--magenta);margin-right:.6em;font-size:.8em}
-.quote small::before,.quote small::after{content:" ✦ ";color:var(--magenta)}
-.stat b{color:var(--gold)}.stat:nth-child(even) b{color:var(--lavender)}
-.two{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center}
-@media(max-width:760px){.two{grid-template-columns:1fr}}
-.two figure{margin:0;min-width:0}
-.two img{width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line);display:block;max-width:100%}
-.two figcaption{color:var(--faint);font-size:12.5px;margin-top:8px;letter-spacing:.04em}
-.formats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-@media(max-width:680px){.formats{grid-template-columns:1fr}}
-.fmt{border:1px solid var(--line);border-radius:12px;padding:16px;background:linear-gradient(180deg,var(--panel),var(--bg2));min-width:0}
-.fmt b{display:block;font-family:var(--display);font-size:21px;font-weight:500;color:var(--gold)}
-.fmt p{margin:.3em 0 0;color:var(--dim);font-size:14.5px}
-.clocks{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
-@media(max-width:680px){.clocks{grid-template-columns:1fr}}
-.clock{border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:linear-gradient(180deg,var(--panel),var(--bg2));min-width:0}
-.clock .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
-.clock h3{font-family:var(--display);font-weight:500;font-size:26px;margin:.2em 0 .25em}
-.clock p{color:var(--dim);margin:0;font-size:15px}
-.clock a{color:var(--gold);text-decoration:none}
-.clock a:hover{text-decoration:underline}
-.cast{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:22px}
-.cm{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);min-width:0;transition:.18s;border-top:2px solid var(--edge,var(--line2))}
-.cm:hover{transform:translateY(-2px);border-color:var(--line2)}
-.cm:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.cm .pf{aspect-ratio:4/3;max-width:100%;overflow:hidden;background:#0a0713}
-.cm img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
-.cm .sig{width:100%;height:100%;display:grid;place-items:center;font-family:var(--display);font-size:40px;color:var(--edge,var(--gold-dim));opacity:.7}
-.cm .nm{padding:10px 12px 12px}
-.cm b{display:block;font-family:var(--display);font-size:19px;font-weight:600;line-height:1.1}
-.cm small{display:block;color:var(--faint);font-size:12px;margin-top:4px;line-height:1.35}
-.seasons{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:22px}
-@media(max-width:680px){.seasons{grid-template-columns:1fr}}
-.sn{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:var(--radius);padding:20px;background:linear-gradient(180deg,var(--panel),var(--bg2));min-width:0;transition:.18s}
-.sn:hover{border-color:var(--line2);background:var(--panel2)}
-.sn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.sn .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.sn .k span:last-child{letter-spacing:.06em;color:var(--faint);text-transform:none}
-.sn h3{font-family:var(--display);font-weight:500;font-size:27px;margin:.15em 0 .3em}
-.sn p{margin:0;color:var(--dim);font-size:15px}
-.lore{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-@media(max-width:860px){.lore{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.lore{grid-template-columns:1fr}}
-.lr{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--panel);min-width:0;transition:.18s}
-.lr:hover{border-color:var(--line2);background:var(--panel2)}
-.lr:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.lr h3{font-family:var(--display);font-weight:500;font-size:22px;margin:0 0 .3em;color:var(--gold)}
-.lr p{margin:0;color:var(--dim);font-size:14.5px}
-.books{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin-top:22px}
-.bk{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);min-width:0;transition:.18s}
-.bk:hover{border-color:var(--gold-dim)}
-.bk:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.bk .cv{aspect-ratio:4/3;max-width:100%;overflow:hidden;background:#0a0713}
-.bk img{width:100%;height:100%;object-fit:cover;display:block}
-.bk .bt{padding:12px 14px 14px}
-.bk b{display:block;font-family:var(--display);font-size:20px;font-weight:600;line-height:1.15}
-.bk p{margin:.3em 0 0;color:var(--dim);font-size:13.5px}
-.bk small{display:block;color:var(--gold-dim);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:8px}
-.order{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,var(--panel),var(--bg2));padding:22px;margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:18px 30px}
-@media(max-width:760px){.order{grid-template-columns:1fr}}
-.order .k{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
-.order h3{font-family:var(--display);font-weight:500;font-size:22px;margin:.15em 0 .2em}
-.order p{margin:0;color:var(--dim);font-size:14.5px}
-.order .zero{grid-column:1/-1;border-bottom:1px solid var(--line);padding-bottom:16px}
-.order .zero h3{font-size:28px;color:var(--gold)}
-.quote{text-align:center;padding:40px 0 6px}
-.quote p{font-family:var(--display);font-style:italic;font-weight:300;font-size:clamp(24px,4vw,38px);margin:0;color:var(--ink);text-wrap:balance}
-.quote small{display:block;margin-top:10px;color:var(--faint);letter-spacing:.16em;text-transform:uppercase;font-size:12px}
-@media(prefers-reduced-motion:reduce){.cm,.sn,.lr,.bk,.btn{transition:none}.cm:hover{transform:none}}
+.btn .ar{font-family:var(--display);font-size:1.3em;line-height:0}
+.formats{margin-top:24px;font-family:var(--mark);font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--faint)}
+.formats b{color:var(--gold-dim);font-weight:500;margin:0 .6em}
+.hero-q{align-self:end;justify-self:end;max-width:220px;text-align:right;font-family:var(--display);font-style:italic;font-weight:300;font-size:19px;color:var(--ash);line-height:1.35;padding-bottom:6px}
+.hero-q::after{content:"";display:block;width:40px;height:1px;background:var(--gold-dim);margin:12px 0 0 auto}
+@media(max-width:860px){
+  .hero-in{grid-template-columns:1fr;padding-top:0}
+  .hero .art{position:relative;inset:auto;height:min(118vw,560px);margin:0 -22px;z-index:0}
+  .hero .art img{object-position:50% 30%}
+  .hero::after{display:none}
+  .hero .art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,7,.15) 0%,rgba(10,8,7,0) 22%,rgba(10,8,7,.55) 48%,rgba(10,8,7,.96) 66%,rgba(10,8,7,1) 80%)}
+  .hero-copy{margin-top:-230px;position:relative;z-index:1}
+  .hero-q{display:none}
+  .btns .btn{flex:1 1 100%;justify-content:center}
+}
+.wrap.landing{max-width:1180px;padding-top:0}
+.feat{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);border:1px solid var(--line2);outline:1px solid var(--line);outline-offset:3px;background:var(--panel);margin-top:-40px;position:relative;z-index:2}
+.feat>*{min-width:0}
+.feat .cover{border-right:1px solid var(--line);overflow:hidden;min-height:220px}
+.feat .cover img{width:100%;height:100%;object-fit:cover;display:block;object-position:left}
+.feat .about{padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:6px}
+.kick{font-family:var(--mark);font-size:10px;letter-spacing:.36em;text-transform:uppercase;color:var(--crimson)}
+.feat h2{font-size:clamp(24px,2.4vw,30px);margin:.1em 0 0;line-height:1.1}
+.feat .sub{font-family:var(--display);font-size:19px;color:var(--ash);margin:0 0 .4em}
+.feat p{color:var(--dim);font-size:14.5px;margin:0 0 16px;line-height:1.55}
+.feat .latest{border-left:1px solid var(--line);padding:26px 28px;display:flex;flex-direction:column;justify-content:center;gap:8px;background:linear-gradient(180deg,var(--panel2),var(--panel))}
+.feat .latest .kick{color:var(--gold-dim)}
+.feat .latest h3{font-size:24px;margin:0;line-height:1.1}
+.feat .latest ul{margin:4px 0 10px;padding-left:18px;color:var(--dim);font-size:14px;line-height:1.5}
+.feat .latest a.more{color:var(--gold);text-decoration:none;font-family:var(--mark);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.feat .latest a.more:hover{text-decoration:underline}
+@media(max-width:900px){.feat{grid-template-columns:1fr}.landing section.feat{margin-top:26px}.feat .cover{border-right:0;border-bottom:1px solid var(--line);min-height:0;aspect-ratio:16/7}.feat .cover img{object-position:center}.feat .latest{border-left:0;border-top:1px solid var(--line)}}
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+@media(max-width:900px){.doors{grid-template-columns:1fr}}
+.door{position:relative;display:block;text-decoration:none;color:inherit;border:1px solid var(--line2);outline:1px solid var(--line);outline-offset:3px;background:var(--panel);overflow:hidden;min-height:260px;isolation:isolate;transition:.2s}
+.door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1;opacity:.85;transition:transform .5s ease}
+.door::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,8,7,.05) 0%,rgba(10,8,7,.35) 45%,rgba(10,8,7,.96) 100%)}
+.door:hover{border-color:var(--gold)}
+.door:hover img{transform:scale(1.04)}
+.door:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.door .in{position:absolute;left:0;right:0;bottom:0;padding:18px 20px 18px 56px}
+.door .star{position:absolute;left:18px;bottom:40px;width:22px;height:22px;color:var(--gold)}
+.door h3{font-family:var(--mark);font-weight:500;font-size:13px;letter-spacing:.24em;text-transform:uppercase;margin:0 0 6px;color:var(--ink)}
+.door p{margin:0;color:var(--dim);font-size:14px;line-height:1.5;max-width:30ch}
+.door .go{position:absolute;right:16px;bottom:16px;width:30px;height:30px;border:1px solid var(--gold-dim);display:grid;place-items:center;color:var(--gold);font-family:var(--display);font-size:18px}
+.join{margin-top:28px;border:1px solid var(--line2);outline:1px solid var(--line);outline-offset:3px;background:linear-gradient(180deg,var(--panel2),var(--panel));padding:22px 26px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px 28px;align-items:center}
+.join .ecl{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle,#0a0807 0 50%,#f5dca8 54%,#d8ab5d 64%,rgba(216,171,93,0) 80%);box-shadow:0 0 22px rgba(216,171,93,.45)}
+.join h3{font-family:var(--mark);font-weight:500;font-size:13px;letter-spacing:.28em;text-transform:uppercase;margin:0 0 4px}
+.join p{margin:0;color:var(--dim);font-size:14px}
+.join form{display:flex;gap:0;min-width:0}
+.join input{min-width:0;flex:1 1 240px;background:#0d0a08;border:1px solid var(--line2);color:var(--ink);padding:12px 14px;font:inherit;font-size:14px}
+.join input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.join button{background:#0d0a08;border:1px solid var(--line2);border-left:0;color:var(--gold);padding:0 18px;font-family:var(--display);font-size:20px;cursor:pointer}
+.join button:hover{color:#fff;border-color:var(--gold)}
+.join .ok{color:var(--gold);font-size:13.5px;margin-top:6px}
+.social{display:flex;gap:16px;align-items:center;grid-column:1/-1;justify-content:space-between;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:14px}
+.social .lbl{font-family:var(--mark);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
+.social .ic{display:flex;gap:18px}
+.social .ic a{color:var(--ash);display:block;width:22px;height:22px}
+.social .ic a:hover{color:var(--gold)}
+.social .ic svg{width:22px;height:22px;fill:currentColor}
+.social .night{font-family:var(--mark);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
+@media(max-width:760px){.join{grid-template-columns:1fr}.join .ecl{display:none}}
+.cast{margin-top:40px}
+.cast .row{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:16px}
+.cast a{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);background:var(--panel);overflow:hidden;min-width:0;transition:.18s}
+.cast a:hover{border-color:var(--gold-dim)}
+.cast a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.cast .pf{aspect-ratio:4/3;max-width:100%;overflow:hidden;background:#0a0807}
+.cast img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.cast b{display:block;font-family:var(--display);font-size:17px;font-weight:600;line-height:1.1;padding:8px 10px 2px}
+.cast small{display:block;color:var(--faint);font-size:11px;padding:0 10px 10px;line-height:1.3}
+.sechead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.sechead h2{font-size:clamp(22px,2.6vw,30px);margin:0}
+.sechead a{color:var(--gold);text-decoration:none;font-family:var(--mark);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.sechead a:hover{text-decoration:underline}
+@media(prefers-reduced-motion:reduce){.door img,.door,.btn{transition:none}.door:hover img{transform:none}}
 </style>
 </head><body id="top">
-<div class="tvm-bar"><a class="tvm-brand" href="index.html"><img src="img/tv-emblem-sm.png" alt="">Twilight Veil <span>Media</span></a><nav class="tvm-links" aria-label="Site"><a href="index.html" aria-current="page">Home</a><a href="codex.html">The Codex</a><a href="codex-codex.html">Characters</a><a href="codex-spine.html">Seasons</a><a href="index.html#archives">Archives</a></nav></div>
+<header class="to-bar"><a class="to-mark" href="index.html">Twilight <span class="o" aria-hidden="true"></span><span class="sr">O</span>rder</a><nav class="to-nav" aria-label="Site"><a href="index.html" aria-current="page">Home</a><a href="codex-read.html">Read</a><a href="codex.html">Archive</a><a href="codex-codex.html">Characters</a><a href="codex-realms.html">World</a><a href="codex-visual-archives.html">Media</a></nav><a class="to-cta" href="codex-read.html">Start Reading</a></header><nav class="to-tabs" aria-label="Site"><a href="index.html" aria-current="page"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/></svg>Home</a><a href="codex-read.html"><svg viewBox="0 0 24 24"><path d="M12 6c-2-1.5-5-1.5-8-.5v13c3-1 6-1 8 .5 2-1.5 5-1.5 8-.5v-13c-3-1-6-1-8 .5z"/><path d="M12 6v13"/></svg>Read</a><a href="codex.html"><svg viewBox="0 0 24 24"><path d="M4 20V8M9 20V4M14 20v-9M19 20V6"/><path d="M2 20h20"/></svg>Archive</a><a href="codex-codex.html"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.5-4 3-6 6.5-6s6 2 6.5 6M15 20c.3-2.5 1.7-4.2 4-4.5 1.3-.2 2.3.4 2.5 1.5"/></svg>Characters</a><a href="codex-realms.html"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>World</a></nav>
 
-<header class="hero-x">
-<img class="hero-bg" src="img/ea22fdd282.avif" alt="An eclipse over the Pharaoh city — cover plate of the Myth &amp; Lore Visual Book" fetchpriority="high">
+<section class="hero">
+<div class="art"><picture><source media="(max-width:860px)" srcset="img/hero_art_m.webp"><img src="img/hero_art.webp" alt="A cloaked figure in a great library looks out at an eclipse over a spired city" fetchpriority="high"></picture></div>
 <div class="hero-in">
-<img class="hero-mark" src="img/tv-emblem.png" alt="The Twilight Veil emblem: a gold T and V around an open eye, ringed by moons and stars" width="577" height="736">
 <div class="hero-copy">
-<div class="crest">✦ Twilight Veil Media presents ✦</div>
-<h1>The Twilight Order</h1>
-<p class="tag">They held the twilight open.</p>
-<p class="sub">An original dark fantasy franchise, in development as a light novel, a manga and anime, and a television series. Four nobodies in a Charlotte apartment try to pay rent and stay out of trouble, and become famous by accident, one impossible rumor at a time, until the hidden world learns their name.</p>
-<div class="cta"><a class="btn solid" href="codex.html">Enter the Master Codex</a><a class="btn" href="#cast">Meet the Order</a></div>
+<div class="eyeb">Official site</div>
+<h1>Enter the Twilight Order Archives</h1>
+<p>A dark-fantasy manga and light-novel franchise of faith, fate, and the endless night. Explore a world where the sun sets on lies, and the truth is written in the stars.</p>
+<div class="btns"><a class="btn red" href="codex-read.html">Start Reading <span class="ar">→</span></a><a class="btn" href="codex.html">Explore the Archive</a><a class="btn" href="codex-codex.html">Meet the Cast</a></div>
+<div class="formats">Manga <b>•</b> Light novel <b>•</b> A living world</div>
 </div>
-</div>
-</header>
-<div class="wrap" style="padding-top:0">
-<div class="stats" role="list">
-<div class="stat" role="listitem"><b>140</b><span>Chapters</span></div>
-<div class="stat" role="listitem"><b>4</b><span>Seasons</span></div>
-<div class="stat" role="listitem"><b>18</b><span>Arcs</span></div>
-<div class="stat" role="listitem"><b>21</b><span>Codex entries</span></div>
-<div class="stat" role="listitem"><b>943</b><span>Illustrated plates</span></div>
-</div>
-
-<section id="studio">
-<div class="two">
-<div>
-<div class="eyebrow">The studio</div>
-<h2>One world, told in every <span class="accent">format</span> it deserves.</h2>
-<p class="lead">Twilight Veil Media is the studio behind The Twilight Order. The franchise is built from a single master canon, the Master Codex, so that every book, episode and panel is measured against the same timeline, the same rulings and the same night an eleven-month-old rang a kingdom like a bell.</p>
-<div class="formats">
-<div class="fmt"><b>Light novel</b><p>The Origins Saga: Book Zero and twelve founding introductions, plus the mentor and culture books.</p></div>
-<div class="fmt"><b>Manga &amp; anime</b><p>The Season Spine, chapters 1–140, drawn from the Integration &amp; Season Architecture.</p></div>
-<div class="fmt"><b>Television</b><p>Four seasons and eighteen arcs, from a name in the hidden world to the gathering of the war for the doorstep.</p></div>
-</div>
-</div>
-<figure><img src="img/4affb779af.avif" alt="A lone figure crossing a field of fallen lanterns" loading="lazy"><figcaption>Plate from the Myth &amp; Lore Visual Book, Volume I</figcaption></figure>
+<div class="hero-q">"In the end, all things return to the same sky."</div>
 </div>
 </section>
+<div class="wrap landing">
 
-<section id="clocks">
-<div class="eyebrow">How the story keeps time</div>
-<h2>Two clocks that meet at <span class="accent">The Awakening</span></h2>
-<p class="lead">These characters are born centuries, sometimes eons, apart, yet they all arrive at one street in one present. The codex runs on two clocks that meet at Year 0, the day Riven consciously calls the blue flame and the story proper begins.</p>
-<div class="clocks">
-<div class="clock"><div class="k">Clock one</div><h3>⧗ The Deep Timeline</h3><p>Backstory time, measured before the present. From before the first star through the Elder-Wilds collapse and the Vantari era, down to the twenty-two years that raised the living cast. Every origin book lives here. <a href="codex-deep.html">Read the Deep Timeline →</a></p></div>
-<div class="clock"><div class="k">Clock two</div><h3>◷ The Story Spine</h3><p>Present time, measured in chapters. One continuous run, Ch. 1–140, across four seasons and eighteen arcs, on Earth and in the Veil beyond it. This is where every backstory converges. <a href="codex-spine.html">Read the Season Spine →</a></p></div>
-</div>
+<section class="feat">
+<div class="cover"><img src="img/book_art.webp" alt="Black-and-white manga cover art: a cloaked figure before a spired city under a dark sun"></div>
+<div class="about"><div class="kick">Begin the journey</div><h2>Book Zero: Riven</h2><p class="sub">Ash Before the Eclipse</p>
+<p>The keystone. Everything else in the saga is measured against the night an eleven-month-old rang a kingdom like a bell.</p>
+<div><a class="btn red" href="codex-read.html">Reading order <span class="ar">→</span></a></div></div>
+<div class="latest"><div class="kick">Latest edition</div><h3>Codex v27</h3><ul><li>Celestial &amp; Master Codex unified</li><li>Family trees and family records</li><li>Named cast and appearance library</li><li>Visual archive reader, 414 pages</li></ul><a class="more" href="codex.html">Open the library →</a></div>
 </section>
 
-<section id="cast">
-<div class="eyebrow">The principals</div>
-<h2>Meet the <span class="accent">Order</span></h2>
-<p class="lead">19 dossier portraits and 21 codex entries: the founding cell, the Trinity, the Season Two arrivals, the four pillars, the mentors and the serpent. Open any card for a full life timeline, power system and entry point.</p>
-<div class="cast"><a class="cm" href="codex-codex.html#c-riven" style="--edge:#5ea9ff"><div class="pf"><img src="img/aa88215afc.jpg" alt="Riven Khari portrait" loading="lazy"></div><div class="nm"><b>Riven Khari</b><small>Protagonist · Twilight Order</small></div></a><a class="cm" href="codex-codex.html#c-arelion" style="--edge:#5fd9a6"><div class="pf"><img src="img/a71621ed99.jpg" alt="Arelion portrait" loading="lazy"></div><div class="nm"><b>Arelion</b><small>Twilight Order · Riven&#x27;s roommate</small></div></a><a class="cm" href="codex-codex.html#c-gingey" style="--edge:#9a7bff"><div class="pf"><img src="img/0cc0f862b7.jpg" alt="Gingey / Aethernox portrait" loading="lazy"></div><div class="nm"><b>Gingey / Aethernox</b><small>Twilight Order · creation&#x27;s oldest being</small></div></a><a class="cm" href="codex-codex.html#c-vaughn" style="--edge:#c9c2dc"><div class="pf"><img src="img/aa099a6b0c.jpg" alt="Vaughn portrait" loading="lazy"></div><div class="nm"><b>Vaughn</b><small>Twilight Order · Scout / infiltrator</small></div></a><a class="cm" href="codex-codex.html#c-scribs" style="--edge:#e5b567"><div class="pf"><img src="img/e1b580e010.jpg" alt="Scribs portrait" loading="lazy"></div><div class="nm"><b>Scribs</b><small>Twilight Order · Navigator / cartomancer</small></div></a><a class="cm" href="codex-codex.html#c-yahia" style="--edge:#5ea9ff"><div class="pf"><img src="img/b376284b9f.jpg" alt="Yahia portrait" loading="lazy"></div><div class="nm"><b>Yahia</b><small>Twilight Order · the Fang clans&#x27; loaned blade</small></div></a><a class="cm" href="codex-codex.html#c-kaisel" style="--edge:#ff6f7d"><div class="pf"><img src="img/24fe6917ca.jpg" alt="Kaisel portrait" loading="lazy"></div><div class="nm"><b>Kaisel</b><small>Blood Courts envoy → Twilight Order household</small></div></a><a class="cm" href="codex-codex.html#c-asha" style="--edge:#f0c26a"><div class="pf"><img src="img/2bf892c086.jpg" alt="Asha Khemet portrait" loading="lazy"></div><div class="nm"><b>Asha Khemet</b><small>Twilight Order · independent judge (&quot;verdict pending&quot;)</small></div></a><a class="cm" href="codex-codex.html#c-amelia" style="--edge:#9a7bff"><div class="pf"><img src="img/7185530c38.jpg" alt="Amelia Lotusveil portrait" loading="lazy"></div><div class="nm"><b>Amelia Lotusveil</b><small>Twilight Order · support mage / healer / controller — Book Nine (rework)</small></div></a><a class="cm" href="codex-codex.html#c-sanaa" style="--edge:#c9c2dc"><div class="pf"><img src="img/cf1e316bf8.jpg" alt="Sanaa Mourne portrait" loading="lazy"></div><div class="nm"><b>Sanaa Mourne</b><small>Twilight Order · the conscience of record</small></div></a><a class="cm" href="codex-codex.html#c-nia" style="--edge:#e5b567"><div class="pf"><img src="img/813630d717.jpg" alt="Nia Ferrum portrait" loading="lazy"></div><div class="nm"><b>Nia Ferrum</b><small>Twilight Order · armament specialist / the forge</small></div></a><a class="cm" href="codex-codex.html#c-ixtli" style="--edge:#e5b567"><div class="pf"><img src="img/89dcd6dbc6.jpg" alt="Ixtli portrait" loading="lazy"></div><div class="nm"><b>Ixtli</b><small>Gilded Jackal oracle → double agent</small></div></a><a class="cm" href="codex-codex.html#c-lysandra" style="--edge:#ff6f7d"><div class="pf"><img src="img/7c13f754d7.jpg" alt="Lysandra portrait" loading="lazy"></div><div class="nm"><b>Lysandra</b><small>Kaisel&#x27;s consort · diplomatic liaison / strategic operative</small></div></a><a class="cm" href="codex-codex.html#c-kirshino" style="--edge:#9a7bff"><div class="pf"><img src="img/74fe63f1e7.jpg" alt="Kirshino portrait" loading="lazy"></div><div class="nm"><b>Kirshino</b><small>Mentor · Vantari exile / freedom-fighter</small></div></a><a class="cm" href="codex-codex.html#c-adair" style="--edge:#ff6f7d"><div class="pf"><img src="img/386c59711d.jpg" alt="Adair Tempus portrait" loading="lazy"></div><div class="nm"><b>Adair Tempus</b><small>Mentor · the Blood thread&#x27;s scholar</small></div></a><a class="cm" href="codex-codex.html#c-elara" style="--edge:#e5b567"><div class="pf"><img src="img/afcc0bc26e.jpg" alt="Elara Ashveil portrait" loading="lazy"></div><div class="nm"><b>Elara Ashveil</b><small>Supporting · Hunter Division recon legend</small></div></a><a class="cm" href="codex-codex.html#c-celestine" style="--edge:#e5b567"><div class="pf"><img src="img/36afdb4333.jpg" alt="Celestine Veyr portrait" loading="lazy"></div><div class="nm"><b>Celestine Veyr</b><small>Veyr sister · battle mage / Route Warden</small></div></a><a class="cm" href="codex-codex.html#c-seraphine" style="--edge:#c9c2dc"><div class="pf"><img src="img/4e3d2fd464.jpg" alt="Seraphine Veyr portrait" loading="lazy"></div><div class="nm"><b>Seraphine Veyr</b><small>Veyr sister · ward mystic / curse-seal specialist</small></div></a><a class="cm" href="codex-codex.html#c-maribel" style="--edge:#f0c26a"><div class="pf"><img src="img/63b7545ccb.jpg" alt="Maribel Veyr portrait" loading="lazy"></div><div class="nm"><b>Maribel Veyr</b><small>Veyr sister · cursebreaker / forbidden-road scout</small></div></a><a class="cm" href="codex-codex.html#c-lunari" style="--edge:#c9c2dc"><div class="pf"><div class="sig" aria-hidden="true">✦</div></div><div class="nm"><b>The Lunari</b><small>Supporting culture · the war&#x27;s &quot;second light&quot;</small></div></a><a class="cm" href="codex-codex.html#c-aurel" style="--edge:#e5b567"><div class="pf"><div class="sig" aria-hidden="true">✦</div></div><div class="nm"><b>Aurel Goldfang</b><small>Antagonist · leader of the Gilded Jackals</small></div></a></div>
+<section class="doors">
+<a class="door" href="codex.html"><img src="img/c08232d6a8.avif" alt="" loading="lazy"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1l1.8 7.2L21 12l-7.2 1.8L12 23l-1.8-9.2L3 12l7.2-2.8z"/><circle cx="12" cy="12" r="1.6" fill="#0a0807"/></svg><div class="in"><h3>The Living Archive</h3><p>Lore, timelines, factions, locations, and the celestial history of our world.</p></div><span class="go" aria-hidden="true">→</span></a>
+<a class="door" href="codex-codex.html"><img src="img/aa88215afc.jpg" alt="" loading="lazy"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1l1.8 7.2L21 12l-7.2 1.8L12 23l-1.8-9.2L3 12l7.2-2.8z"/><circle cx="12" cy="12" r="1.6" fill="#0a0807"/></svg><div class="in"><h3>Character Codex</h3><p>Heroes, heretics, and the many who shape the coming night.</p></div><span class="go" aria-hidden="true">→</span></a>
+<a class="door" href="codex-visual-archives.html"><img src="img/3331bec103.avif" alt="" loading="lazy"><svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 1l1.8 7.2L21 12l-7.2 1.8L12 23l-1.8-9.2L3 12l7.2-2.8z"/><circle cx="12" cy="12" r="1.6" fill="#0a0807"/></svg><div class="in"><h3>Latest Release</h3><p>New plates, books, and official announcements from the archive.</p></div><span class="go" aria-hidden="true">→</span></a>
 </section>
 
-<section id="seasons">
-<div class="eyebrow">Clock two</div>
-<h2>Four seasons, <span class="accent">140 chapters</span></h2>
-<p class="lead">Only Seasons One and Four carry subtitles; Two and Three are titled by their arcs. Each season page shows exactly where every principal steps onto the page.</p>
-<div class="seasons"><a class="sn" href="codex-spine.html#ch-1"><div class="k"><span>Season One</span><span>Ch. 1–35 · Arcs I–V</span></div><h3>A Name in the Hidden World</h3><p>Four Coalition nobodies (Cell 9) try to pay rent and stay out of trouble — and become famous by accident, one impossible rumor at a time, until the finale hands them the name the franchise is titled after. Base: Apartment 304 , blocks from Riven&#x27;s grandparents&#x27; antiquities shop.</p></a><a class="sn" href="codex-spine.html#ch-2"><div class="k"><span>Season Two</span><span>Ch. 36–70 · Arcs VI–IX</span></div><h3>The Pack Completes</h3><p>Season One was the household; Season Two is the pack. The full roster assembles and turns frictional as two mythologized heirs — frost and blood — arrive, a season-long tracking mystery closes on the team, and the first Infernal House agents reach Earth.</p></a><a class="sn" href="codex-spine.html#ch-3"><div class="k"><span>Season Three</span><span>Ch. 71–105 · Arcs X–XIII</span></div><h3>The Deep Veil &amp; the Long Chase</h3><p>With the full eleven assembled, the crew works Deep-Veil and buried-history mysteries while the Long Chase tightens — Riven&#x27;s blood becomes known to everything that listens — and the season ends with the family reunion detonated as a cliffhanger.</p></a><a class="sn" href="codex-spine.html#ch-4"><div class="k"><span>Season Four</span><span>Ch. 106–140 · Arcs XIV–XVIII</span></div><h3>What Glory Leaves Behind</h3><p>The aftermath season — the people who come after the crew&#x27;s loud last-second victories. The Veyr sisters (moon-ward &quot;buriers&quot;) integrate as a chartered Guild lineage while the S3 cliffhanger detonates in slow motion: the parents are home and every faction converges. Not the war for the doorstep — the gathering of it.</p></a></div>
+<section class="join">
+<div class="ecl" aria-hidden="true"></div>
+<div><h3>Join the Order</h3><p>Get the latest chapters, news, and exclusive content from the world of Twilight Order.</p></div>
+<form id="join-form" novalidate><label class="sr" for="join-email">Your email address</label><input id="join-email" type="email" placeholder="Your email address" autocomplete="email"><button type="submit" aria-label="Join">→</button></form>
+<div class="social"><span class="lbl">Follow our journey</span><div class="ic"><a href="#" aria-label="X" title="X — link coming soon"><svg viewBox="0 0 24 24"><path d="M17.5 3h3.1l-6.8 7.8L21.8 21h-6.3l-4.9-6.4L5 21H1.9l7.3-8.3L1.5 3h6.4l4.4 5.9zm-1.1 16.2h1.7L6.8 4.7H5z"/></svg></a><a href="#" aria-label="Instagram" title="Instagram — link coming soon"><svg viewBox="0 0 24 24"><path d="M12 7.3a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm6-7.9a1.1 1.1 0 1 1-2.2 0 1.1 1.1 0 0 1 2.2 0zM21.6 8c-.1-1.5-.4-2.8-1.5-3.9S17.6 2.7 16.1 2.6C14.5 2.5 9.5 2.5 8 2.6 6.5 2.7 5.1 3 4 4.1S2.6 6.5 2.5 8c-.1 1.5-.1 6.5 0 8 .1 1.5.4 2.8 1.5 3.9s2.4 1.4 3.9 1.5c1.5.1 6.5.1 8 0 1.5-.1 2.8-.4 3.9-1.5s1.4-2.4 1.5-3.9c.1-1.5.1-6.5 0-8zm-2 9.7a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.9.4s-4.7.1-5.9-.4a3 3 0 0 1-1.7-1.7c-.5-1.2-.4-4-.4-5.9s-.1-4.7.4-5.9a3 3 0 0 1 1.7-1.7c1.2-.5 4-.4 5.9-.4s4.7-.1 5.9.4a3 3 0 0 1 1.7 1.7c.5 1.2.4 4 .4 5.9s.1 4.7-.4 5.9z"/></svg></a><a href="#" aria-label="YouTube" title="YouTube — link coming soon"><svg viewBox="0 0 24 24"><path d="M23 7.2a2.9 2.9 0 0 0-2-2C19.2 4.7 12 4.7 12 4.7s-7.2 0-9 .5a2.9 2.9 0 0 0-2 2C.5 9 .5 12 .5 12s0 3 .5 4.8a2.9 2.9 0 0 0 2 2c1.8.5 9 .5 9 .5s7.2 0 9-.5a2.9 2.9 0 0 0 2-2c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8zM9.7 15.1V8.9l6 3.1z"/></svg></a><a href="#" aria-label="Discord" title="Discord — link coming soon"><svg viewBox="0 0 24 24"><path d="M20.3 4.4A19.6 19.6 0 0 0 15.4 3l-.2.4a18 18 0 0 1 4.4 2.2 15.9 15.9 0 0 0-15.2 0A18 18 0 0 1 8.8 3.4L8.6 3a19.6 19.6 0 0 0-4.9 1.4C.6 9.1-.2 13.6.2 18.1a19.8 19.8 0 0 0 6 3l1.3-2a12.7 12.7 0 0 1-2-1l.5-.4a14 14 0 0 0 12 0l.5.4c-.7.4-1.3.7-2 1l1.3 2a19.7 19.7 0 0 0 6-3c.5-5.2-.9-9.7-3.5-13.7zM8 15.4c-1.2 0-2.1-1.1-2.1-2.4S6.8 10.6 8 10.6s2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4zm8 0c-1.2 0-2.1-1.1-2.1-2.4s.9-2.4 2.1-2.4 2.2 1.1 2.1 2.4c0 1.3-.9 2.4-2.1 2.4z"/></svg></a><a href="#" aria-label="TikTok" title="TikTok — link coming soon"><svg viewBox="0 0 24 24"><path d="M16.6 2h-3.4v13.4a2.9 2.9 0 1 1-2.9-2.9c.3 0 .6 0 .9.1V9.2a6.3 6.3 0 1 0 5.4 6.2V8.6a7.6 7.6 0 0 0 4.4 1.4V6.6A4.5 4.5 0 0 1 16.6 2z"/></svg></a></div><span class="night">The night continues</span></div>
 </section>
 
-<div class="quote"><p>"Leave your fear outside. Leave your pride outside. But never leave your name."</p><small>The Nomad Oath</small></div>
-
-<section id="world">
-<div class="eyebrow">The hidden world</div>
-<h2>Lore, factions and the <span class="accent">long game</span></h2>
-<div class="lore"><a class="lr" href="codex-factions.html"><h3>Factions &amp; the Hoard</h3><p>The Gilded Jackals are not an army. They are the hidden world&#x27;s most successful acquisition house, led by a collector who wants to shelve the world rather than rule it.</p></a><a class="lr" href="codex-veil.html"><h3>The Veil — the Hollow Family</h3><p>The setting&#x27;s oldest horror is not a faction that wants territory or thrones. It is a family that hunts identity.</p></a><a class="lr" href="codex-weave.html"><h3>The Ancient Weave</h3><p>Five deep storylines braid toward one cosmological answer: the eclipse-marked client, the cut seams, the sleeping gods and the compressing Veil are the same story.</p></a><a class="lr" href="codex-gingey-myth.html"><h3>The Myth of the Void Sovereign</h3><p>No living mortal has seen the true Aethernox. Whenever he appears, he is simply Gingey: the traveler, the bridge-builder, the stranger feeding birds.</p></a><a class="lr" href="codex-seraphina.html"><h3>Seraphina Noctielle</h3><p>The Keeper of Forgotten Truths, and Gingey&#x27;s counterpart.</p></a><a class="lr" href="codex-great-shift.html"><h3>The Great Shift — Bloodline Codex</h3><p>How transcendence became inheritable: the Saurai and Kynari inheritances, and the living lineages that survive in the modern cast.</p></a><a class="lr" href="codex-deep.html"><h3>The Deep Timeline</h3><p>Backstory time, measured before the present: from before the first star through the Elder-Wilds collapse to the twenty-two years that raised the living cast.</p></a></div>
+<section class="cast">
+<div class="sechead"><h2>The principals</h2><a href="codex-codex.html">All 19 dossiers →</a></div>
+<div class="row"><a href="codex-codex.html#c-riven"><div class="pf"><img src="img/aa88215afc.jpg" alt="Riven Khari" loading="lazy"></div><b>Riven Khari</b><small>Protagonist · Twilight Order</small></a><a href="codex-codex.html#c-arelion"><div class="pf"><img src="img/a71621ed99.jpg" alt="Arelion" loading="lazy"></div><b>Arelion</b><small>Twilight Order · Riven&#x27;s roommate</small></a><a href="codex-codex.html#c-gingey"><div class="pf"><img src="img/0cc0f862b7.jpg" alt="Gingey / Aethernox" loading="lazy"></div><b>Gingey / Aethernox</b><small>Twilight Order · creation&#x27;s oldest being</small></a><a href="codex-codex.html#c-vaughn"><div class="pf"><img src="img/aa099a6b0c.jpg" alt="Vaughn" loading="lazy"></div><b>Vaughn</b><small>Twilight Order · Scout / infiltrator</small></a><a href="codex-codex.html#c-scribs"><div class="pf"><img src="img/e1b580e010.jpg" alt="Scribs" loading="lazy"></div><b>Scribs</b><small>Twilight Order · Navigator / cartomancer</small></a><a href="codex-codex.html#c-yahia"><div class="pf"><img src="img/b376284b9f.jpg" alt="Yahia" loading="lazy"></div><b>Yahia</b><small>Twilight Order · the Fang clans&#x27; loaned blade</small></a><a href="codex-codex.html#c-kaisel"><div class="pf"><img src="img/24fe6917ca.jpg" alt="Kaisel" loading="lazy"></div><b>Kaisel</b><small>Blood Courts envoy → Twilight Order household</small></a><a href="codex-codex.html#c-asha"><div class="pf"><img src="img/2bf892c086.jpg" alt="Asha Khemet" loading="lazy"></div><b>Asha Khemet</b><small>Twilight Order · independent judge (&quot;verdict pending&quot;)</small></a><a href="codex-codex.html#c-amelia"><div class="pf"><img src="img/7185530c38.jpg" alt="Amelia Lotusveil" loading="lazy"></div><b>Amelia Lotusveil</b><small>Twilight Order · support mage / healer / controller — Book Nine (rework)</small></a><a href="codex-codex.html#c-sanaa"><div class="pf"><img src="img/cf1e316bf8.jpg" alt="Sanaa Mourne" loading="lazy"></div><b>Sanaa Mourne</b><small>Twilight Order · the conscience of record</small></a><a href="codex-codex.html#c-nia"><div class="pf"><img src="img/813630d717.jpg" alt="Nia Ferrum" loading="lazy"></div><b>Nia Ferrum</b><small>Twilight Order · armament specialist / the forge</small></a><a href="codex-codex.html#c-ixtli"><div class="pf"><img src="img/89dcd6dbc6.jpg" alt="Ixtli" loading="lazy"></div><b>Ixtli</b><small>Gilded Jackal oracle → double agent</small></a></div>
 </section>
 
-<section id="archives">
-<div class="eyebrow">The visual archives</div>
-<h2>Eleven illustrated <span class="accent">books</span></h2>
-<p class="lead">The codex carries the franchise's visual bibles in full: 943 plates across the celestial, pestilence, atlas, realm, myth, nomad and bestiary archives, the complete visual archive and the Living Atlas continuity ledger. Tap any plate on its page to view it full-screen.</p>
-<div class="books"><a class="bk" href="codex-elohim.html"><div class="cv"><img src="img/7f90ae0811.avif" alt="" loading="lazy"></div><div class="bt"><b>The Elohim &amp; Sentinel Codex</b><p>The Guardians of Doors — the celestial order that watches the thresholds between realms.</p><small>28 plates</small></div></a><a class="bk" href="codex-pestilence.html"><div class="cv"><img src="img/105106a7b2.avif" alt="" loading="lazy"></div><div class="bt"><b>The Pestilence Codex</b><p>Integrated visual edition of the forbidden histories: the plague-sovereigns and their factions.</p><small>86 plates</small></div></a><a class="bk" href="codex-pest-companion.html"><div class="cv"><img src="img/707a127594.avif" alt="" loading="lazy"></div><div class="bt"><b>The Pestilence Visual Companion</b><p>Collections 11–XLI of the antagonist archive, plate by plate.</p><small>229 plates</small></div></a><a class="bk" href="codex-atlas.html"><div class="cv"><img src="img/0f34e04950.avif" alt="" loading="lazy"></div><div class="bt"><b>Atlas of the Eight Peoples</b><p>The living atlas of the cultures that share the hidden world.</p><small>Text atlas</small></div></a><a class="bk" href="codex-realms.html"><div class="cv"><img src="img/1c3ff81227.avif" alt="" loading="lazy"></div><div class="bt"><b>The Realm Lore Book</b><p>Faction homelands, from the Solar Dominion to the Hanging Kingdom, mapped.</p><small>20 plates</small></div></a><a class="bk" href="codex-myth-lore.html"><div class="cv"><img src="img/ea22fdd282.avif" alt="" loading="lazy"></div><div class="bt"><b>The Myth &amp; Lore Visual Book</b><p>Realms, people, omens and legends, with the Living World addenda.</p><small>216 plates</small></div></a><a class="bk" href="codex-nomad-archive.html"><div class="cv"><img src="img/9f633c3cfc.avif" alt="" loading="lazy"></div><div class="bt"><b>The Nomadic Visual Archive</b><p>Research plates, registers and field notes from the Nomad lands, Volumes I–II.</p><small>150 plates</small></div></a><a class="bk" href="codex-bestiary.html"><div class="cv"><img src="img/8b5d399663.avif" alt="" loading="lazy"></div><div class="bt"><b>The Nomadic Magical Bestiary</b><p>Creature studies, ancient murals, field notes and Anima ecologies: eighteen illustrated species records.</p><small>18 plates</small></div></a><a class="bk" href="codex-visual-archive.html"><div class="cv"><img src="img/va-48.webp" alt="" loading="lazy"></div><div class="bt"><b>The Complete Visual Archive</b><p>Ninety-four illustrations and extracted panels: chronicles, characters, Black Houses, war beasts, Veil gates and relics.</p><small>94 plates</small></div></a><a class="bk" href="codex-living-atlas.html"><div class="cv"><img src="img/la-110.webp" alt="" loading="lazy"></div><div class="bt"><b>The Living Atlas</b><p>Seventy illustrated windows through the long war, each with its moment, cause, consequence and continuity link.</p><small>70 plates</small></div></a><a class="bk" href="codex-illustrations.html"><div class="cv"><img src="img/ic-32.webp" alt="" loading="lazy"></div><div class="bt"><b>Illustrations — Collected Archive</b><p>Thirty-two concept contact sheets, closing with the latest character interactions across Books I–X.</p><small>32 plates</small></div></a></div>
-</section>
-
-<section id="reading">
-<div class="eyebrow">Where to begin</div>
-<h2>The canonical <span class="accent">reading order</span></h2>
-<p class="lead">The project resolves into one library. This is the order a new reader should move through it.</p>
-<div class="order">
-<div class="zero"><div class="k">Book Zero</div><h3>Riven: Ash Before the Eclipse</h3><p>The keystone. Everything else in the saga is measured against the night an eleven-month-old rang a kingdom like a bell.</p></div>
-<div><div class="k">Part One</div><h3>The Origins Saga — Twelve Books</h3><p>Riven, Arelion, Gingey, Vaughn, Scribs, Yahia, Kaisel, Asha, Amelia, Sanaa, Nia and Ixtli. Each standalone-readable.</p></div>
-<div><div class="k">Companion</div><h3>Mentor &amp; Culture Books</h3><p>Adair, Kirshino, Elara Ashveil, the Lunari, Kaisel's return and The Veil Lore Bible. Read after their linked origin book.</p></div>
-<div><div class="k">Part Two</div><h3>Integration &amp; Season Architecture</h3><p>The Season One assembly, the Four Pillars addendum and the Gilded Jackals antagonist build.</p></div>
-<div><div class="k">Part Three</div><h3>The Long Game</h3><p>Seasons Two to Four, the Ancient Plot Weave and the Consolidated Decision Ledger.</p></div>
-</div>
-<div class="cta"><a class="btn solid" href="codex-read.html">Full reading order</a><a class="btn" href="codex.html">Table of contents</a></div>
-</section>
-
-<footer class="tvm-foot"><img src="img/tv-emblem-glow.png" alt="Twilight Veil emblem"><div>✦ <b>Twilight Veil Media</b> ✦ The Twilight Order — Master Codex, expanded edition v13 · visual archive v8.<br>
-Assembled from the Origins Saga, the Integration &amp; Season Architecture, the mentor &amp; culture books, The Veil Lore Bible, and the Ancient Plot Weave. Riven's origin is fixed to v3.1 (Eclipse Stardust / Pharaoh Eyes); chapters run continuously 1–140 across Arcs I–XVIII.<br>
-All text, characters, artwork and worldbuilding © Twilight Veil Media. <a href="codex.html">Full table of contents</a></div></footer>
+<footer class="to-foot"><span class="ecl" aria-hidden="true"></span><div class="motto">Stories outlive empires.</div>
+<div><b>Twilight Order</b> — an original dark fantasy franchise from <b>Twilight Veil Media</b>. Celestial &amp; Master Codex, unified edition v27.<br>All text, characters, artwork and worldbuilding © Twilight Veil Media.</div>
+<div class="lnks"><a href="codex.html">Codex library</a><a href="codex-read.html">Reading order</a><a href="codex-codex.html">Characters</a><a href="codex-family-trees.html">Family trees</a><a href="codex-visual-archives.html">Visual archives</a></div></footer>
 </div>
 <a class="totop" href="#top" aria-label="Back to top">▲<span> Top</span></a>
 <script>(function(){document.addEventListener("keydown",function(e){if(e.key==="Escape")document.querySelectorAll(".zoom input:checked").forEach(function(c){c.checked=false;});});function openTarget(){var id=location.hash.slice(1);if(!id)return;var el=document.getElementById(id);if(!el)return;var d=el.closest("details");while(d){d.open=true;d=d.parentElement&&d.parentElement.closest("details");}if(el.tagName==="DETAILS")el.open=true;requestAnimationFrame(function(){el.scrollIntoView({block:"start"});});}window.addEventListener("hashchange",openTarget);openTarget();var tt=document.querySelector(".totop");function tog(){tt.classList.toggle("hide",window.scrollY<600);}window.addEventListener("scroll",tog,{passive:true});tog();})();</script>
+<script>(function(){var f=document.getElementById('join-form');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();var i=document.getElementById('join-email');var ok=f.querySelector('.ok');if(!ok){ok=document.createElement('div');ok.className='ok';f.parentNode.insertBefore(ok,f.nextSibling)}if(!i.value||i.value.indexOf('@')<0){ok.textContent='Enter an email address to join.';i.focus();return}ok.textContent='Thank you. The Order will write when the night continues.';i.value=''})})();</script>
 </body></html>
