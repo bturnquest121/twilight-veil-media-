@@ -220,6 +220,16 @@ nav.toc a.is-here{color:var(--ink);border-color:var(--gold-dim);background:var(-
 .toc-panel.inline .toc-close{display:none}
 .toc-panel.inline .toc-inner{padding:0;max-width:none}
 .subsec h3 small{color:var(--faint);font-weight:400;font-size:.7em;letter-spacing:.06em}
+.daily{margin:0 0 18px;padding:0 0 16px;border-bottom:1px solid var(--line)}
+.daily-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.daily-shuffle{font:inherit;font-size:12px;letter-spacing:.08em;color:var(--gold);background:none;border:1px solid var(--line2);border-radius:999px;padding:5px 14px;cursor:pointer}
+.daily-shuffle:hover{border-color:var(--gold);color:var(--ink)}
+.daily-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}
+.daily-grid figure.fig{margin:0;border-radius:8px}
+.daily-grid .zoom>img{aspect-ratio:1;object-fit:cover;max-height:none;cursor:zoom-in}
+.daily-grid .zoom input:checked+img{aspect-ratio:auto;object-fit:contain}
+@media(max-width:760px){.daily-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:420px){.daily-grid{grid-template-columns:repeat(2,1fr)}}
 .va-controls{display:flex;flex-wrap:wrap;gap:12px}
 .va-controls label{min-width:0;max-width:100%}
 #va-view{max-width:100%;overflow:auto}
