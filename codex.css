@@ -203,6 +203,18 @@ nav.toc a.is-here{color:var(--ink);border-color:var(--gold-dim);background:var(-
 .toc-panel.inline .toc-close{display:none}
 
 /* ---- Twilight Veil Media site chrome ---- */
+.la-plate{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:18px 24px;align-items:start;padding:22px 0;border-top:1px solid var(--line)}
+.la-plate:first-of-type{border-top:0}
+.la-plate figure.fig{margin:0}
+.la-text{min-width:0}
+.la-text h4{font-size:22px;margin:.2em 0 .3em;line-height:1.15}
+.la-text .eyebrow{font-size:11px}
+.la-text .c-role{margin-bottom:6px}
+.la-text .c-tags{margin:0 0 10px}
+.la-text .fld{margin-top:12px}
+.la-text p{margin:.25em 0 0;color:var(--dim);font-size:14.5px}
+@media(max-width:760px){.la-plate{grid-template-columns:1fr}}
+.subsec h3 small{color:var(--faint);font-weight:400;font-size:.7em;letter-spacing:.06em}
 :root{--magenta:#b8265a;--lavender:#b89ad2;--purple:#5b3fb0}
 .tvm-brand{display:inline-flex;align-items:center;gap:10px}
 .tvm-brand img{width:26px;height:auto;display:block;filter:drop-shadow(0 0 6px rgba(154,123,255,.35))}
